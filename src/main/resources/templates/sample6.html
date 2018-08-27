@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Thymeleaf3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	
+	<!-- th:text 태그를 inline 방식으로 쓰기 위한 설정 -->
+	<table border="1" th:inline="text">
+	
+	<tr>
+		<td>MID</td>
+		<td>MNAME</td>
+		<td>REGDATE</td>
+	</tr>
+	
+	<tr th:each="member: ${list}">
+		<td>[[${member.mid}]]</td>
+		<td>[[${member.mname}]]</td>
+		<td>[[${member.regdate}]]</td>
+	</tr>
+	
+	</table>
+	
+	<script th:inline="javascript">
+	
+	var result = [[${result}]]
+	
+	</script>
+
+</body>
+</html>
